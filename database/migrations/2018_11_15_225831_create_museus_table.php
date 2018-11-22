@@ -15,12 +15,14 @@ class CreateMuseusTable extends Migration
     {
         Schema::create('museus', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('dsc_museu',200);
+			$table->text('nome');
+            $table->text('dsc_museu');
 			$table->text('historia');
 			$table->string('telefone',20)->nullable();
 			$table->string('email',100)->nullable();
 			$table->string('link',200)->nullable();
 			$table->string('endereco')->nullable();
+			$table->string('tematica')->nullable();
 			$table->integer('api')->nullable();
 			
         });

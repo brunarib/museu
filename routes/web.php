@@ -22,7 +22,11 @@ Route::get('/museu','MuseusController@index');
 // get specific task
 Route::get('/museu/{id}','MuseusController@show');
 // create new task
-Route::get('/museu/api/{dsc_museu}','MuseusController@byName');
+Route::get('/museu/nome/{nome}','MuseusController@byName');
+// create new task
+Route::get('/museu/api/{api}','MuseusController@byApi');
+// create new task
+Route::get('/museu/tematica/{tematica}','MuseusController@byTematica');
 // update existing task
 Route::put('/museu','MuseusController@store');
 // delete a task

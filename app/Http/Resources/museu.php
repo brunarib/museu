@@ -16,11 +16,13 @@ class museu extends JsonResource
     {
         return [
 		 'id' 		=> $this-> id,
+		 'nome'     =>$this->nome,
 		 'dsc_museu'=>$this->dsc_museu,
 		 'historia'	=>$this->historia,
 		 'telefone'	=>$this->telefone,
 		 'email'	=>$this->email,
 		 'link'		=>$this->link,
+		 'tematica'	=>$this->tematica,
 		 'api'		=>$this->api
 		
 		];

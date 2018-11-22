@@ -28,10 +28,21 @@ class MuseusController extends Controller
 	   return new MuseuResource($museus);
     }
 
-    public function byName ($dsc_museu){
+    public function byName ($nome){
 		
 		//$museu = museu::findOrFail($name);
-		return  MuseuResource::collection(museu::where("dsc_museu", "like", "%" .$dsc_museu. "%")->get());
+		return  MuseuResource::collection(museu::where("dsc_museu", "like", "%" .$nome. "%")->get());
+	}
+	
+	public function byTematica ($tematica){
+		
+		//$museu = museu::findOrFail($name);
+		return  MuseuResource::collection(museu::where("tematica", "=",$tematica)->get());
+	}
+	public function byApi ($api){
+		
+		//$museu = museu::findOrFail($name);
+		return  MuseuResource::collection(museu::where("api", "=",$api)->get());
 	}
 	
     public function destroy($id)
