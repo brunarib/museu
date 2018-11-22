@@ -31,7 +31,7 @@ class MuseusController extends Controller
     public function byName ($nome){
 		
 		//$museu = museu::findOrFail($name);
-		return  MuseuResource::collection(museu::where("dsc_museu", "like", "%" .$nome. "%")->get());
+		return  MuseuResource::collection(museu::where("LOWER('NOME')", "LIKE", "%" .$nome. "%")->get());
 	}
 	
 	public function byTematica ($tematica){
